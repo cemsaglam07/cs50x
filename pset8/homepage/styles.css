@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+}
+
+/* Navigation bar --> Background */
+.topnav {
+  background-color: #D3E0EA;
+  overflow: hidden;
+}
+
+/* Navigation bar --> Link Text */
+.topnav a {
+  float: left;
+  color: #1687A7;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navigation bar --> Link Text on hover */
+.topnav a:hover {
+  background-color: #D3E0EA;
+  color: white;
+}
+
+/* Navigation bar --> Active Page Text */
+.topnav .active {
+  background-color: #F6F5F5;
+  color: #1687A7;
+}
+
+/* Column container */
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  background-color: #F6F5F5;
+  padding: 20px;
+}
+
+/* Main column */
+.main {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width:100%;
+  }
+}

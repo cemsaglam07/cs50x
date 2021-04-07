@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function()  {
+                let correct = document.querySelector(".correct");
+                correct.addEventListener("click", function()  {
+                    correct.style.backgroundColor = "green";
+                    document.querySelector("#response1").innerHTML = "Correct";
+                });
+
+                let incorrects = document.querySelectorAll(".incorrect");
+                for (let i = 0; i < incorrects.length; i++)  {
+                    incorrects[i].addEventListener("click", function()  {
+                        incorrects[i].style.backgroundColor = "red";
+                        document.querySelector("#response1").innerHTML = "Incorrect";
+                    })
+                }
+
+                document.querySelector("#check").addEventListener("click", function()  {
+                    let input = document.querySelector("input");
+                    if (input.value === "Turkey")  {
+                        input.style.backgroundColor = "green";
+                        document.querySelector("#response2").innerHTML = "Correct";
+                    } else  {
+                        input.style.backgroundColor = "red";
+                        document.querySelector("#response2").innerHTML = "Incorrect";
+                    }
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr> <!-- TODO: Add multiple choice question here -->
+                <h3>In the 1995 film <q>Toy Story,</q> which character says the final three words: "Wow, a puppy!"?</h3>
+                <button class="incorrect">Woody</button>
+                <button class="correct">Andy</button>
+                <button class="incorrect">Buzz Lightyear</button>
+                <button class="incorrect">Mr. Potato Head</button>
+                <button class="incorrect">Mrs. Potato Head</button>
+                <p id="response1"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>Santa Claus, or Saint Nicolas, was born in...</h3>
+                <input type="text"></input>
+                <button id="check">Check Answer</button>
+                <p id="response2"></p>
+            </div>
+        </div>
+    </body>
+</html>
