@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bio50: Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/login" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text" style="color: #8a5abd; background-color: #eee3fb;">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password" style="color: #8a5abd; background-color: #eee3fb;">
+        </div>
+        <button class="btn btn-primary" type="submit" style="color: #8a5abd; background-color: #cdaaf4;">Log In</button>
+    </form>
+{% endblock %}

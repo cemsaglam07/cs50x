@@ -1,0 +1,41 @@
+ {% extends "layout.html" %}
+
+{% block title %}
+    Documentation
+{% endblock %}
+
+{% block main %}
+    <h2 style="color: #8a5abd; text-align: center;">Documentation</h2>
+    <div class="accordion" id="accordionExample">
+      {% for card in cards %}
+      <div class="card">
+        <div class="card-header" id="heading{{ card.id }}" style="background-color: #d7bbf6;">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse{{ card.id }}" aria-expanded="false" aria-controls="collapse{{ card.id }}">
+              {{ card.title }}
+            </button>
+          </h2>
+        </div>
+        <div id="collapse{{ card.id }}" class="collapse" aria-labelledby="heading{{ card.id }}" data-parent="#accordionExample">
+          <div class="card-body" style="background-color: #e6d4f9; text-align: justify; text-justify: inter-word;">
+            {% for line in card.bodytext %}
+                  <p>{{ line }}</p>
+            {% endfor %}
+            <p><span style="color:green; font-weight:bold">Given: </span>{{ card.txtgiv }}</p>
+            <div class="alert alert-dark" style="background-color: #eee3fb;" role="alert">
+              {% for line in card.txtin %}
+                  <p>{{ line }}</p>
+              {% endfor %}
+            </div>
+            <p><span style="color:green; font-weight:bold">Return: </span>{{ card.txtret }}</p>
+            <div class="alert alert-dark" style="background-color: #eee3fb;" role="alert">
+              {% for line in card.txtout %}
+                  <p>{{ line }}</p>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+{% endblock %}
